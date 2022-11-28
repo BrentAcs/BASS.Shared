@@ -1,8 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{14F66782-E432-4B0A-A6E0-5D058B7FAF08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2BEAB479-1CEB-4891-BD86-EBDF634F47ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bass.Shared", "app\Bass.Shared\Bass.Shared.csproj", "{AE8760D1-E7C9-424B-93BD-37568B051F59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE8760D1-E7C9-424B-93BD-37568B051F59} = {14F66782-E432-4B0A-A6E0-5D058B7FAF08}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE8760D1-E7C9-424B-93BD-37568B051F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8760D1-E7C9-424B-93BD-37568B051F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8760D1-E7C9-424B-93BD-37568B051F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8760D1-E7C9-424B-93BD-37568B051F59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
