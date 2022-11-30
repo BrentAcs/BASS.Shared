@@ -1,3 +1,5 @@
+using Bass.Shared.Extensions;
+
 namespace Bass.Shared.Utilities;
 
 public class IntValueRequest
@@ -40,13 +42,22 @@ public class IntValueRequest
    public MinMax<int>? MinMaxSelection
    {
       get => _minMaxSelection;
+      set => SetMinMaxSelection(value);
    }
 
-   // public T GetValue(IRng rng)
-   // {
-   //
-   //    return default;
-   // }
+   public int GetValue(IRng rng)
+   {
+      if (_absoluteValue is not null)
+         return _absoluteValue.Value;
+
+      if (_subsetSelection is not null)
+         return rng.Next(_subsetSelection);
+      
+      if (_minMaxSelection is not null)
+         return rng.Next(_minMaxSelection);
+
+      throw new NotImplementedException();
+   }
    
    private void SetAbsoluteValue(int? value)
    {
@@ -62,4 +73,10 @@ public class IntValueRequest
       _minMaxSelection = null;
    }
 
+   private void SetMinMaxSelection(MinMax<int>? value)
+   {
+      _absoluteValue = null;
+      _subsetSelection = null;
+      _minMaxSelection = value;
+   }
 }
