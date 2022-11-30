@@ -4,18 +4,16 @@ namespace Bass.Shared.Utilities;
 
 public record MinMax<T>() where T : INumber<T>
 {
-   public MinMax(T? min = default, T? max = default) : this()
+   public MinMax(T min, T max) : this()
    {
-      if (min is not null && max is not null)
-      {
-         if (min >= max)
-            throw new ArgumentOutOfRangeException( $"{nameof(min)}", $"{nameof(min)} greater than or equal to {nameof(max)}");
-      }
-      
+      if (min >= max)
+         throw new ArgumentOutOfRangeException($"{nameof(min)}",
+            $"{nameof(min)} greater than or equal to {nameof(max)}");
+
       Min = min;
       Max = max;
    }
 
-   public T? Min { get; set; }
-   public T? Max { get; set; }
+   public T Min { get; set; }
+   public T Max { get; set; }
 }
