@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using Bass.Shared.Utilities;
 
 namespace Bass.Shared.Tests.Utilities;
