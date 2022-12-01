@@ -11,6 +11,8 @@ public class ValueRequestTests
       First,
       Second,
       Third,
+      Fourth,
+      Fifth
    }
    
    // --- After construction
@@ -67,7 +69,7 @@ public class ValueRequestTests
    }
 
    [Fact]
-   public void GetValue_WillReturn_IntInSubset_WhenSet()
+   public void GetValue_WillReturn_ValueInSubset_WhenSet()
    {
       var sut = new ValueRequest<TestEnum>(Enum.GetValues<TestEnum>());
 
@@ -75,10 +77,9 @@ public class ValueRequestTests
 
       value.Should().BeOneOf(Enum.GetValues<TestEnum>());
    }
-
    
    [Fact]
-   public void GetValue_WillReturn_IntInSubset_WhenSet_Strings()
+   public void GetValue_WillReturn_ValueInSubset_WhenSet_Strings()
    {
       var choices = new[] { "Connor", "Lucas", "Ry", "Abby"};
       var sut = new ValueRequest<string>(choices);
@@ -86,5 +87,17 @@ public class ValueRequestTests
       var value = sut.GetValue(_rng);
 
       value.Should().BeOneOf(choices);
+   }
+   
+   // --- GetValues
+
+   [Fact]
+   public void GetValues_WillReturn_UniqueValuesInSubset_WhenSet()
+   {
+      var sut = new ValueRequest<TestEnum>(Enum.GetValues<TestEnum>());
+
+      var values = sut.GetValues(_rng, 2);
+
+      values.Distinct().Should().HaveCount(2);
    }
 }
