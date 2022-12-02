@@ -47,31 +47,6 @@ public class ValueRequest<T>
       
       throw new NotImplementedException();
    }
-
-   public IEnumerable<T> GetValues(IRng rng, int uniqueCount)
-   {
-      if (_subsetSelection is null)
-         throw new InvalidOperationException("GetValues called w/o a subset selection.");
-      if (uniqueCount < 0)
-         throw new ArgumentOutOfRangeException(nameof(uniqueCount), "Must be positive.");
-      if (uniqueCount > _subsetSelection.Count())
-         throw new ArgumentOutOfRangeException(nameof(uniqueCount), "Must be less than or equal to subset selection count.");
-      
-      var values = new List<T>();
-
-      for (int i = 0; i < uniqueCount; i++)
-      {
-         T value = rng.Next(_subsetSelection);
-         while (values.Contains(value))
-         {
-            value = rng.Next(_subsetSelection);
-         }
-         
-         values.Add(value);         
-      }
-
-      return values;
-   }
    
    private void SetAbsoluteValue(T? value)
    {
