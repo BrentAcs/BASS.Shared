@@ -13,7 +13,7 @@ public class ValuesRequest<T>
       SubsetSelection = subsetSelection;
       AmountRequested = amountRequested;
    }
-   
+
    public int AmountRequested { get; set; }
 
    public IEnumerable<T>? SubsetSelection{ get; set; }

@@ -35,4 +35,14 @@ public class IntExtensionsTests
    [InlineData(2, false)]
    public void IsNegative_Theories(int value, bool expected) =>
       value.IsNegative().Should().Be(expected);
+   
+   [Theory]
+   [InlineData(3, "III")]
+   [InlineData(4, "IV")]
+   [InlineData(8, "VIII")]
+   [InlineData(9, "IX")]
+   [InlineData(123, "CXXIII")]
+   public void ToRoman_Theories(int value, string expected) =>
+      value.ToRoman().Should().Be(expected);
+  
 }
