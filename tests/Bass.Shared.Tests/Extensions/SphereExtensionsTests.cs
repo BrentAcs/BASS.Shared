@@ -6,7 +6,8 @@ namespace Bass.Shared.Tests.Extensions;
 public class SphereExtensionsTests
 {
    [Theory]
-   [InlineData(7917, 196786852)]
+   [InlineData(1000, 12566370)]
+   [InlineData(3958, 196861796)]
    public void CalcSurfaceArea_Theory(int radius, long expected)
    {
       var sphere = new Sphere(radius);
