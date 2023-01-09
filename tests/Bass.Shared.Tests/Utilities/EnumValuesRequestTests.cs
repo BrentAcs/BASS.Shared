@@ -17,13 +17,13 @@ public class EnumValuesRequestTests
 
    // --- GetValues
 
-   // [Fact]
-   // public void GetValues_WillReturn_UniqueValuesInSubset_WhenSet()
-   // {
-   //    var sut = new EnumValuesRequest<TestEnum>();
-   //
-   //    var values = sut.GetValues(_rngMock.Object, 2);
-   //
-   //    values.Distinct().Should().HaveCount(2);
-   // }
+   [Fact]
+   public void GetValues_WillReturn_UniqueValuesInSubset_WhenSet()
+   {
+      var sut = new EnumValuesRequest<TestEnum>();
+   
+      var values = sut.GetValues(_rng, 2);
+   
+      values.Distinct().Should().HaveCount(2);
+   }
 }
