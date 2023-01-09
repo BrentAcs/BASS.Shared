@@ -4,7 +4,7 @@ namespace Bass.Shared.Tests.Utilities;
 
 public class ValueRequestTests
 {
-   private SimpleRng _rng = new SimpleRng();
+   private readonly IRng _rng = RngMockHelper.GetRng();
 
    public enum TestEnum
    {

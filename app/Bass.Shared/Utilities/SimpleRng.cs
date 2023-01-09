@@ -6,6 +6,15 @@ public sealed class SimpleRng : IRng
 
    private readonly Random _random = new();
 
+   public SimpleRng()
+   {
+   }
+
+   public SimpleRng(int seed)
+   {
+      _random = new Random(seed);
+   }
+
    public int Next() => _random.Next();
    public int Next(int maxValue) => _random.Next(maxValue);
    public int Next(int minValue, int maxValue) => _random.Next(minValue, maxValue);
