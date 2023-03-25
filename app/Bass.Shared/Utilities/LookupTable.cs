@@ -23,6 +23,7 @@ public class LookupTable<T> where T : class?
    private List<Entry> _items = new();
 
    public IEnumerable<Entry> Items => GetItems();
+   public bool HasBucket => _items.Any(_ => _.Chance is null);
 
    public IEnumerable<Entry> GetItems() 
    {
@@ -50,9 +51,17 @@ public class LookupTable<T> where T : class?
 
    public void Add(Entry entry)
    {
-      if (entry.Chance is null && _items.Any(_ => _.Chance is null))
+      if (entry.Chance is null && HasBucket)
          throw new InvalidOperationException();
       
       _items.Add(entry);
+   }
+
+   public Entry GetRandom(IRng rng)
+   {
+      double roll = rng.NextD100();
+
+      throw new NotImplementedException();
+
    }
 }
