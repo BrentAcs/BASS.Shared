@@ -22,6 +22,10 @@ public class IntValueRequest
       _subsetSelection = subsetSelection;
    }
 
+   public IntValueRequest(int min, int max) : this(new MinMax<int>(min, max))
+   {
+   }
+   
    public IntValueRequest(MinMax<int>? minMaxSelection)
    {
       _minMaxSelection = minMaxSelection;
