@@ -1,5 +1,5 @@
-﻿global using System.Reflection;
-global using System.Diagnostics;
+﻿global using System.Diagnostics;
+global using System.Reflection;
 
 global using MongoDB.Driver;
 global using MongoDB.Bson.Serialization;
