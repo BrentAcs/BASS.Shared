@@ -40,6 +40,9 @@ public class MongoRepository<TDoc> : IMongoRepository<TDoc> where TDoc : IMongoD
 
    // --- IMongoRepoRead
 
+   public virtual async Task<IEnumerable<TDoc>> GetAllAsync() =>
+      await Collection.Find(Builders<TDoc>.Filter.Empty).ToListAsync();
+
    public virtual TDoc FindById(string id)
    {
       var objectId = new ObjectId(id);

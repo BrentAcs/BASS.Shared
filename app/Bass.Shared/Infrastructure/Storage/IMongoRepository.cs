@@ -19,6 +19,7 @@ public interface IMongoRepoCreate<TDoc> where TDoc : IMongoDocument
 
 public interface IMongoRepoRead<TDoc> where TDoc : IMongoDocument
 {
+   Task<IEnumerable<TDoc>> GetAllAsync();
    TDoc FindById(string id);
    Task<TDoc> FindByIdAsync(string id, CancellationToken cancellationToken=default);
 #if USE_LINQ_TO_MONGO
