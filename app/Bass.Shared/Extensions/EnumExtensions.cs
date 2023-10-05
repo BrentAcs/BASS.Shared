@@ -1,4 +1,6 @@
-﻿namespace Bass.Shared.Extensions;
+﻿using Bass.Shared.Utilities;
+
+namespace Bass.Shared.Extensions;
 
 public static class EnumExtensions
 {
@@ -10,7 +12,7 @@ public static class EnumExtensions
       return (attributes.Length > 0) ? (T)attributes[0] : null;
    }
 
-   public static T GetRandomValue<T>(this Enum e) //where T : Enum
+   public static T GetRandomValue<T>(this IRng rng) //where T : Enum
    {
       Enum.GetValues(typeof(T));
 
