@@ -9,4 +9,18 @@ public static class EnumExtensions
       var attributes = memInfo[0].GetCustomAttributes(typeof(T), false);
       return (attributes.Length > 0) ? (T)attributes[0] : null;
    }
+
+   public static T GetRandomValue<T>(this Enum e) //where T : Enum
+   {
+      Enum.GetValues(typeof(T));
+
+      throw new NotImplementedException();
+   }
+
+}
+
+public enum Test
+{
+   A,
+   B
 }
