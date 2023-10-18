@@ -4,7 +4,7 @@ namespace Bass.Shared.Extensions;
 
 public static class EnumExtensions
 {
-   public static T GetAttributeOfType<T>(this Enum enumVal) where T : Attribute
+   public static T? GetAttributeOfType<T>(this Enum enumVal) where T : Attribute
    {
       var type = enumVal.GetType();
       var memInfo = type.GetMember(enumVal.ToString());
@@ -18,7 +18,6 @@ public static class EnumExtensions
 
       throw new NotImplementedException();
    }
-
 }
 
 public enum Test
