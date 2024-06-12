@@ -22,6 +22,10 @@ public class DoubleValueRequest
       _subsetSelection = subsetSelection;
    }
 
+   public DoubleValueRequest(double min, double max) : this(new MinMax<double>(min, max))
+   {
+   }
+
    public DoubleValueRequest(MinMax<double>? minMaxSelection)
    {
       _minMaxSelection = minMaxSelection;
