@@ -1,7 +1,6 @@
 # BASS.Shared
 Brent Acs Software Solutions Shared libs
                                                 
-
 MinMax<T>
                                                                
 ValueRequest<T>
